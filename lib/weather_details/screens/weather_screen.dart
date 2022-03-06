@@ -14,7 +14,14 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   WeatherApi api = WeatherApi();
-  WeatherModel? weatherData;
+  WeatherModel weatherData = WeatherModel(
+      temp: 0.0,
+      minTemp: 0.0,
+      maxTemp: 0.0,
+      wind: 0.0,
+      pressure: 0,
+      humidity: 0,
+      feelsLike: 0.0);
 
   Future<void> getWeatherData() async {
     weatherData = await api.getCurrentWeather(13.067439, 80.237617);
@@ -36,11 +43,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  BasicInformationWidget(weatherModel: weatherData!),
+                  BasicInformationWidget(weatherModel: weatherData),
                   const SizedBox(
                     height: 50,
                   ),
-                  AdditionalInformationWidget(weatherModel: weatherData!),
+                  AdditionalInformationWidget(weatherModel: weatherData),
                 ],
               );
             }

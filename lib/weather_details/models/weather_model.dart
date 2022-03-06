@@ -1,20 +1,20 @@
 class WeatherModel {
   WeatherModel({
-    this.temp,
-    this.minTemp,
-    this.maxTemp,
-    this.wind,
-    this.pressure,
-    this.humidity,
-    this.feelsLike,
+    required this.temp,
+    required this.minTemp,
+    required this.maxTemp,
+    required this.wind,
+    required this.pressure,
+    required this.humidity,
+    required this.feelsLike,
   });
-  double? temp;
-  double? minTemp;
-  double? maxTemp;
-  double? wind;
-  int? pressure;
-  int? humidity;
-  double? feelsLike;
+  double temp = 0.0;
+  double minTemp = 0.0;
+  double maxTemp = 0.0;
+  double wind = 0.0;
+  int pressure = 0;
+  int humidity = 0;
+  double feelsLike = 0.0;
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
     temp = json['main']['temp'];

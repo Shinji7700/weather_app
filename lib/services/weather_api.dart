@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:weather_app/weather_details/models/weather_model.dart';
 
 class WeatherApi {
-  Future<WeatherModel>? getCurrentWeather(double lat, double long) async {
+  Future<WeatherModel> getCurrentWeather(double lat, double long) async {
     var url = Uri.parse(
         "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&appid=1e445dee0e8e6cd79bdd846ab5d46ebb&units=metric");
     var response = await http.get(url);
